@@ -1,0 +1,16 @@
+﻿@model MVCTreeView.Models.CompositeThing
+@using MVCTreeView.Models
+
+<script src="../../Content/jquery-1.4.1.min.js" type="text/javascript"></script>
+<link href="../../Content/jquery.treeview.css" rel="stylesheet" type="text/css" />
+<script src="../../Content/jquery.treeview.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    $(function () {
+        $("#treeview ul").treeview();
+    });
+
+</script>
+<div id="treeview">
+@MvcHtmlString.Create(@Html.RenderTree(Model.Children, thing => thing.Name))  
+</div>
